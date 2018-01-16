@@ -6,7 +6,7 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-      this is all products
+        this is products
       </div>
     )
   }

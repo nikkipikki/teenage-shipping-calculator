@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // Connect to MongoDB, on the "products-api" database. If the db doesn't exist, mongo will create it.
-mongoose.connect("mongodb://localhost/products-api", { useMongoClient: true })
+mongoose.connect("mongodb://localhost/products-te", { useMongoClient: true })
 
 // This makes mongo use ES6 promises, instead of its own implementation
 mongoose.Promise = Promise
@@ -23,7 +23,15 @@ mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 // This is the beginning of a model for the Product object.
 const Product = mongoose.model("Product", {
+  id: Number,
   name: String,
+  type: String,
+  size: String,
+  numberInPack: String,
+  price: Number,
+  image: String,
+  description: String,
+  harmcode: String
   // Add more attributes to your product here.
 })
 
@@ -42,5 +50,10 @@ app.post("/products", (req, res) => {
 })
 
 // Add more endpoints here!
+app.get("/products", (req, res) => (
+  Product.find().then((allProducts) => (
+    res.json(allProducts)
+  )
+)
 
 app.listen(8080, () => console.log("Products API listening on port 8080!"))
