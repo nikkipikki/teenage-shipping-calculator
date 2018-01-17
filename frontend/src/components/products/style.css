@@ -9,8 +9,9 @@
   border-radius: 15px;
   background: white;
   border: 2px solid black;
-  width: 18%;
+  width: 20%;
   padding: 20px;
+  margin: 20px;
   margin-bottom: 55px;
 }
 
@@ -57,6 +58,10 @@
   right: 0;
   background: rgba(192,192,192,1);
   /*background: rgba(255, 255, 255, 0.8)*/
+}
+
+.list {
+  padding-bottom: 10px;
 }
 
 #space {

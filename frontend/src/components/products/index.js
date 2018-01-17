@@ -39,10 +39,10 @@ class Products extends React.Component {
             <img className="picture" alt="produktbild" src={this.props.productImage} />
           </div>
 
-          <p>{this.props.productNumberInPack}</p>
-          <p>{this.props.productNumberInInnerPack}</p>
-          <p>{this.props.productNumberInBox}</p>
-          <p>{this.props.productNumberOnPallet}</p>
+          <p>number in pack:{this.props.productNumberInPack}</p>
+          <p>number in innerpack:{this.props.productNumberInInnerPack}</p>
+          <p>number in box:{this.props.productNumberInBox}</p>
+          <p>number on pallet:{this.props.productNumberOnPallet}</p>
 
         </div>
       </div>
