@@ -1,0 +1,64 @@
+.picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-height: 10vw;
+  max-width: 15vw;
+}
+
+.productbox {
+  border-radius: 15px;
+  background: white;
+  border: 2px solid black;
+  width: 18%;
+  padding: 20px;
+  margin-bottom: 55px;
+}
+
+.picturebox {
+  background: white;
+  text-align: center;
+  height: 200px;
+}
+
+.name {
+  text-align: center;
+  width: 100%;
+}
+
+.typemeasurment {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+}
+
+.measurments {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.hoverbox {
+  position: relative;
+}
+
+.hoverbox:hover .description {
+  display: block;
+}
+
+.description {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  padding-top: 50px;
+  border-radius: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(192,192,192,1);
+  /*background: rgba(255, 255, 255, 0.8)*/
+}
+
+#space {
+  margin-right: 20px;
+}

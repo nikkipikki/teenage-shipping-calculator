@@ -1,5 +1,5 @@
 import React from "react"
-import Products from "./products"
+import Productfetch from "./productfetch"
 import Newproduct from "./newproduct"
 import Login from "./login"
 
@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div>
         Find me in src/app.js!
-        <Products />
+        <Productfetch />
         <Newproduct />
         <Login />
       </div>
