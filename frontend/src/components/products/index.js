@@ -6,6 +6,14 @@ class Products extends React.Component {
     return (
       <div className="productbox">
         <div className="name">
+
+          <div className="checkboxpick">
+            <input
+              type="checkbox"
+              id={this.props.productIndividualId} />
+            <label className="checkboxstyle" htmlFor={this.props.productIndividualId} />
+          </div>
+
           <h1>{this.props.productName}</h1>
           <p>{this.props.productSku}</p>
         </div>

@@ -67,3 +67,18 @@
 #space {
   margin-right: 20px;
 }
+
+.checkboxstyle {
+  background-color: yellow;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.checkboxpick input[type=checkbox]{
+  display: none;
+}
+
+.checkboxpick input[type=checkbox]:checked + .checkboxstyle{
+  background-color: pink;
+}

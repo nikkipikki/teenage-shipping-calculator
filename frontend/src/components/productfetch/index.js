@@ -26,6 +26,7 @@ class Productfetch extends React.Component {
         <div className="container">
           {this.state.product.map((item) => {
             return <Products
+              productIndividualId={item._id}
               productCategory={item.category}
               productId={item.id}
               productSku={item.sku}
