@@ -1,0 +1,10 @@
+.attributes {
+  margin-top: 50px;
+  width: 700%;
+  background: pink;
+  text-align: left;
+  position: absolute;
+  padding: 10px;
+  left: -320%;
+  border-radius: 0px 0px 10px 10px;
+}

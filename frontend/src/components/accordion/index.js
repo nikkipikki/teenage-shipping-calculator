@@ -1,9 +1,10 @@
 import React from "react"
+import "./style.css"
 
 class Accordion extends React.Component {
   render() {
     return (
-      <div>
+      <div className="attributes">
         <p>number in pack:{this.props.product.numberInPack}</p>
         <p>number in innerpack:{this.props.product.numberInInnerPack}</p>
         <p>number in box:{this.props.product.numberInBox}</p>

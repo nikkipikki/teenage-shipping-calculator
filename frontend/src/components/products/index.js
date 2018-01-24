@@ -33,13 +33,6 @@ class Products extends React.Component {
                 <p>{this.props.product.sku}</p>
               </div>
 
-              <div className="picturebox">
-                <img
-                  className="picture"
-                  alt="produktbild"
-                  src={this.props.product.image} />
-              </div>
-
               <div>
                 <button className="information" onClick={this.toggleHiddenbox}>
                   {!this.state.isHidden &&
@@ -48,6 +41,14 @@ class Products extends React.Component {
                   }
                 </button>
               </div>
+
+              <div className="picturebox">
+                <img
+                  className="picture"
+                  alt="produktbild"
+                  src={this.props.product.image} />
+              </div>
+
             </label>
           </div>
 
