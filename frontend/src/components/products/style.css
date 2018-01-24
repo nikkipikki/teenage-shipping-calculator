@@ -1,24 +1,29 @@
+body {
+  background: black;
+}
+
 .picture {
   padding-top: 30px;
   padding-bottom: 30px;
-  max-height: 10vw;
-  max-width: 15vw;
+  max-height: 25vw;
+  max-width: 25vw;
 }
 
 .productbox {
-  border-radius: 15px;
-  background: white;
+  border-radius: 10px;
+  background: transparent;
   border: 2px solid black;
-  width: 20%;
-  padding: 20px;
-  margin: 20px;
+  width: 30%;
+  /*padding: 20px;*/
+  /*margin: 20px;*/
   margin-bottom: 55px;
 }
 
 .picturebox {
-  background: white;
+  /*background: white;*/
   text-align: center;
   height: 200px;
+  /*margin: 20px;*/
 }
 
 .name {
@@ -60,6 +65,12 @@
   /*background: rgba(255, 255, 255, 0.8)*/
 }
 
+.information {
+  text-align: left;
+  padding-left: 30px;
+  margin-top: 15vw;
+}
+
 .list {
   padding-bottom: 10px;
 }
@@ -69,10 +80,13 @@
 }
 
 .checkboxstyle {
-  background-color: yellow;
+  background-color: white;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 700px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: black;
 }
 
 .checkboxpick input[type=checkbox]{
@@ -80,5 +94,6 @@
 }
 
 .checkboxpick input[type=checkbox]:checked + .checkboxstyle{
-  background-color: pink;
+  background-color: green;
+  color: white;
 }
