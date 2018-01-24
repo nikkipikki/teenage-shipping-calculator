@@ -67,11 +67,11 @@ body {
 }
 
 .information {
-  /*left: 44%;*/
+  left: 44%;
   position: relative;
   padding-left: 30px;
   margin-top: 15vw;
-  width: 50px;
+  width: 100%;
   height: 50px;
   background: transparent;
   border: none;
@@ -79,6 +79,10 @@ body {
   background-repeat: no-repeat;
   margin: auto;
   cursor: context-menu;
+}
+
+button:focus {
+    outline:none;
 }
 
 .list {
