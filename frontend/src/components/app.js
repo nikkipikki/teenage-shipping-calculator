@@ -2,7 +2,9 @@ import React from "react"
 import Productfetch from "./productfetch"
 import Newproduct from "./newproduct"
 import Login from "./login"
-import Header from "./header"
+// import Header from "./header"
+import Chosenproducts from "./chosenproducts"
+
 
 class App extends React.Component {
 
@@ -10,9 +12,10 @@ class App extends React.Component {
     return (
       <div>
         Find me in src/app.js!
-        <Header />
+        {/* <Header /> */}
         <Productfetch />
         <Newproduct />
+        {/* <Chosenproducts /> */}
         <Login />
       </div>
     )

@@ -2,11 +2,12 @@ import React from "react"
 import "./style.css"
 import Accordion from "../accordion"
 
-class Products extends React.Component {
+class Product extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isHidden: true
+      isHidden: true,
+      isChecked: false
     }
   }
 
@@ -14,6 +15,12 @@ class Products extends React.Component {
     this.setState({
       isHidden: !this.state.isHidden
     })
+  }
+
+  isProductChosen = () => {
+    // if (this.state.isChecked === true) {
+      this.props.chosenCallback(this.props.product.name)
+    // }
   }
 
   render() {
@@ -24,7 +31,9 @@ class Products extends React.Component {
           <div className="checkboxpick">
             <input
               type="checkbox"
-              id={this.props.product._id} />
+              id={this.props.product._id}
+              // checked={this.state.isChecked}
+              onChange={this.isProductChosen} />
             <label
               className="checkboxstyle"
               htmlFor={this.props.product._id}>
@@ -59,4 +68,4 @@ class Products extends React.Component {
 
 }
 
-export default Products
+export default Product

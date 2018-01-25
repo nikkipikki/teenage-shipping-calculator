@@ -1,13 +1,15 @@
 import React from "react"
-import Products from "../products"
+import Product from "../product"
 import "./style.css"
 import Header from "../header"
+import Chosenproducts from "../chosenproducts"
 
 class Productfetch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      product: []
+      products: [],
+      chosenproducts: []
     }
   }
 
@@ -16,24 +18,40 @@ class Productfetch extends React.Component {
       return response.json()
     }).then(json => {
       this.setState({
-        product: json
+        products: json
       })
+    })
+  }
+
+  addProductCallback = name => {
+    this.setState({
+      chosenproducts: [...this.state.chosenproducts, name]
+    })
+  }
+
+  removeProductCallback = name => {
+    this.setState({
+      chosenproducts: []
     })
   }
 
   render() {
     return (
       <div>
-        <p> Visar {this.state.product.length} produkter</p>
+        <Header
+          productLength={this.state.products.length} />
         <div className="container">
-          {this.state.product.map((item) => {
-            return <Products
-              product={item} />
+          {this.state.products.map((product) => {
+            return <Product
+              product={product}
+              chosenCallback={this.addProductCallback} />
             })}
         </div>
-          <div className="shipbuttoncontainer">
-            <button className="shipbutton"></button>
-          </div>
+        <Chosenproducts
+          chosenNames={this.state.chosenproducts} />
+        <div className="shipbuttoncontainer">
+          <button className="shipbutton"></button>
+        </div>
       </div>
 
     )
