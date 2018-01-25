@@ -1,5 +1,5 @@
 body {
-  background: black;
+  /*background: black;*/
 }
 
 .picture {
@@ -32,18 +32,6 @@ body {
   width: 100%;
 }
 
-.typemeasurment {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: flex-start;
-}
-
-.measurments {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
-}
-
 .hoverbox {
   position: relative;
 }
@@ -67,11 +55,11 @@ body {
 }
 
 .information {
-  left: 44%;
+  left: 8%;
   position: relative;
   padding-left: 30px;
   margin-top: 15vw;
-  width: 100%;
+  width: 30%;
   height: 50px;
   background: transparent;
   border: none;
@@ -87,10 +75,6 @@ button:focus {
 
 .list {
   padding-bottom: 10px;
-}
-
-#space {
-  margin-right: 20px;
 }
 
 .checkboxstyle {

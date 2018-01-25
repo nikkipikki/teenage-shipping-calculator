@@ -1,6 +1,7 @@
 import React from "react"
 import Products from "../products"
 import "./style.css"
+import Header from "../header"
 
 class Productfetch extends React.Component {
   constructor(props) {
@@ -27,23 +28,6 @@ class Productfetch extends React.Component {
           {this.state.product.map((item) => {
             return <Products
               product={item} />
-              // productIndividualId={item._id}
-              // productCategory={item.category}
-              // productId={item.id}
-              // productSku={item.sku}
-              // productName={item.name}
-              // productType={item.type}
-              // productHeight={item.height}
-              // productLenght={item.lenght}
-              // productDept={item.dept}
-              // productNumberInPack={item.numberInPack}
-              // productNumberInInnerPack={item.numberInInnerPack}
-              // productNumberInBox={item.numberInBox}
-              // productNumberOnPallet={item.numberOnPallet}
-              // productImage={item.image}
-              // productValue={item.value}
-              // productDescriptionHarmCode={item.descriptionHarmCode}
-              // productHarmcode={item.harmcode}/>
             })}
         </div>
       </div>

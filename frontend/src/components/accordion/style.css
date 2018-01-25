@@ -1,10 +1,23 @@
 .attributes {
   margin-top: 50px;
-  width: 95%;
-  background: white;
+  width: 300%;
+  background: #ffdf7f;
   text-align: left;
   position: absolute;
+  border: 2px solid black;
   padding: 10px;
-  left: -44%;
-  border-radius: 0px 0px 10px 10px;
+  left: -127%;
+  border-radius: 10px;
+}
+
+.typemeasurment {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+}
+
+.measurments {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
 }
