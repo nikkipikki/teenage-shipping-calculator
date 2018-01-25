@@ -1,7 +1,8 @@
 .attributes {
-  margin-top: 50px;
+  margin-top: -360px;
   width: 300%;
-  background: #ffdf7f;
+  background: black;
+  color: rgb(249, 168, 0);
   text-align: left;
   position: absolute;
   border: 2px solid black;

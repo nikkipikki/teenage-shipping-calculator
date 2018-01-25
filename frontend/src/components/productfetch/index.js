@@ -24,12 +24,16 @@ class Productfetch extends React.Component {
   render() {
     return (
       <div>
+        <p> Visar {this.state.product.length} produkter</p>
         <div className="container">
           {this.state.product.map((item) => {
             return <Products
               product={item} />
             })}
         </div>
+          <div className="shipbuttoncontainer">
+            <button className="shipbutton"></button>
+          </div>
       </div>
 
     )

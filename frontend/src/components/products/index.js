@@ -33,7 +33,14 @@ class Products extends React.Component {
                 <p>{this.props.product.sku}</p>
               </div>
 
-              <div>
+              <div className="picturebox">
+                <img
+                  className="picture"
+                  alt="produktbild"
+                  src={this.props.product.image} />
+              </div>
+
+              <div className="informationbox">
                 <button className="information" onClick={this.toggleHiddenbox}>
                   {!this.state.isHidden &&
                   <Accordion
@@ -42,16 +49,8 @@ class Products extends React.Component {
                 </button>
               </div>
 
-              <div className="picturebox">
-                <img
-                  className="picture"
-                  alt="produktbild"
-                  src={this.props.product.image} />
-              </div>
-
             </label>
           </div>
-
         </div>
       </div>
 
