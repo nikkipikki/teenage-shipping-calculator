@@ -29,10 +29,22 @@ class Productfetch extends React.Component {
     })
   }
 
-  removeProductCallback = name => {
-    this.setState({
-      chosenproducts: []
-    })
+  removeProductCallback = productName => {
+    this.setState(prevState => ({
+      chosenproducts: this.removeFromChosenProducts(prevState, productName)
+    }))
+    // this.setState({
+    //   chosenproducts: []
+    // })
+  }
+
+  removeFromChosenProducts = (prevState, productName) => {
+    prevState.chosenproducts.splice(prevState.chosenproducts.indexOf(
+      prevState.chosenproducts.find(item => (
+        item.name === productName
+      )), 1))
+    console.log(prevState.chosenproducts)
+    return prevState.chosenproducts
   }
 
   render() {
@@ -44,7 +56,8 @@ class Productfetch extends React.Component {
           {this.state.products.map((product) => {
             return <Product
               product={product}
-              chosenCallback={this.addProductCallback} />
+              chosenCallback={this.addProductCallback}
+              removeCallback={this.removeProductCallback} />
             })}
         </div>
         <Chosenproducts

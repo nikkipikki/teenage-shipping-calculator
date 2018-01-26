@@ -4,6 +4,7 @@ import "./style.css"
 class Chosenproducts extends React.Component {
 
   printNames = () => {
+    console.log(this.props.chosenNames)
     return (
       <div>
         {this.props.chosenNames.map(name => {
@@ -15,7 +16,7 @@ class Chosenproducts extends React.Component {
   render() {
     return (
       <div>
-        <p>heeeej vilka är valda?{this.printNames()}</p>
+        <p>what are the chosen products{this.printNames()}</p>
       </div>
     )
   }

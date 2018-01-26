@@ -18,9 +18,15 @@ class Product extends React.Component {
   }
 
   isProductChosen = () => {
-    // if (this.state.isChecked === true) {
-      this.props.chosenCallback(this.props.product.name)
-    // }
+    this.setState({
+      isChecked: !this.state.isChecked
+    }, () => {
+      if (this.state.isChecked === true) {
+        this.props.chosenCallback(this.props.product.name)
+      } else {
+        this.props.removeCallback(this.props.product.name)
+      }
+    })
   }
 
   render() {
@@ -32,7 +38,7 @@ class Product extends React.Component {
             <input
               type="checkbox"
               id={this.props.product._id}
-              // checked={this.state.isChecked}
+              checked={this.state.isChecked}
               onChange={this.isProductChosen} />
             <label
               className="checkboxstyle"
