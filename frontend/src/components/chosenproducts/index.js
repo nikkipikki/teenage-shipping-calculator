@@ -15,7 +15,7 @@ class Chosenproducts extends React.Component {
   render() {
     return (
       <div className="chosenproducts">
-        <p>what are the chosen products{this.printNames()}</p>
+        <p>CHOOSEN PRODUCTS{this.printNames()}</p>
       </div>
     )
   }

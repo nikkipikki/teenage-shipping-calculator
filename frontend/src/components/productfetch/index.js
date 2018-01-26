@@ -8,6 +8,7 @@ class Productfetch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      isHidden: true,
       products: [],
       chosenproducts: []
     }
@@ -40,6 +41,12 @@ class Productfetch extends React.Component {
     return prevState.chosenproducts
   }
 
+  showTheChosenProducts = () => {
+    this.setState(prevState => ({
+      isHidden: !prevState
+    }))
+  }
+
   render() {
     return (
       <div>
@@ -50,13 +57,15 @@ class Productfetch extends React.Component {
             return <Product
               product={product}
               chosenCallback={this.addProductCallback}
-              removeCallback={this.removeProductCallback} />
+              removeCallback={this.removeProductCallback}
+              onStatus={this.showTheChosenProducts} />
             })}
         </div>
-        <Chosenproducts
-          chosenNames={this.state.chosenproducts} />
+        {!this.state.isHidden &&
+          <Chosenproducts
+            chosenNames={this.state.chosenproducts} />}
         <div className="shipbuttoncontainer">
-          <button className="shipbutton"></button>
+          <button className="shipbutton" />
         </div>
       </div>
 
