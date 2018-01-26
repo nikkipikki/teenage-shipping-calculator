@@ -14,9 +14,9 @@ class App extends React.Component {
         Find me in src/app.js!
         {/* <Header /> */}
         <Productfetch />
-        <Newproduct />
+        {/* <Newproduct /> */}
         {/* <Chosenproducts /> */}
-        <Login />
+        {/* <Login /> */}
       </div>
     )
   }

@@ -21,10 +21,10 @@ class Product extends React.Component {
     this.setState({
       isChecked: !this.state.isChecked
     }, () => {
-      if (this.state.isChecked === true) {
+      if (this.state.isChecked) {
         this.props.chosenCallback(this.props.product.name)
       } else {
-        this.props.removeCallback(this.props.product.name)
+        this.props.removeCallback(this.props.product)
       }
     })
   }
