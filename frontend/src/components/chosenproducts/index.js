@@ -15,7 +15,33 @@ class Chosenproducts extends React.Component {
   render() {
     return (
       <div className="chosenproducts">
-        <p>CHOOSEN PRODUCTS{this.printNames()}</p>
+        <h1 className="chosenproductsheader">CHOOSEN PRODUCTS: {this.props.chosenNames.length}</h1>
+        <div className="printednames">
+          <p>{this.printNames()}</p>
+          <input
+            type="text"
+            placeholder="qty" />
+          <select
+            type="text"
+            placeholder="boxes">
+            <option value="" selected disabled hidden>box qty</option>
+            <option
+              value="1">1
+            </option>
+            <option
+              value="2">2
+            </option>
+            <option
+              value="3">3
+            </option>
+            <option
+              value="4">4
+            </option>
+            <option
+              value="5">5
+            </option>
+          </select>
+        </div>
       </div>
     )
   }

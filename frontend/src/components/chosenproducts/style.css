@@ -3,7 +3,18 @@
   border-radius: 10px;
   margin: auto;
   text-align: center;
-  width: 30%;
+  width: 72%;
   margin-bottom: 50px;
   background: rgb(249, 168, 0);
+}
+
+/*.chosenproductsheader {
+  margin: auto;
+  text-align: center;
+}*/
+
+.printednames {
+  width:50%;
+  margin: auto;
+  text-align: left;
 }

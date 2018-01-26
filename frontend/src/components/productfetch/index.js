@@ -8,16 +8,15 @@ class Productfetch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isHidden: true,
       products: [],
       chosenproducts: []
     }
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/products").then(response => {
-      return response.json()
-    }).then(json => {
+    fetch("http://localhost:8080/products").then(response => (
+      response.json()
+    )).then(json => {
       this.setState({
         products: json
       })
@@ -41,29 +40,23 @@ class Productfetch extends React.Component {
     return prevState.chosenproducts
   }
 
-  showTheChosenProducts = () => {
-    this.setState(prevState => ({
-      isHidden: !prevState
-    }))
-  }
-
   render() {
     return (
       <div>
         <Header
           productLength={this.state.products.length} />
         <div className="container">
-          {this.state.products.map((product) => {
-            return <Product
+          {this.state.products.map(product => (
+            <Product
               product={product}
               chosenCallback={this.addProductCallback}
-              removeCallback={this.removeProductCallback}
-              onStatus={this.showTheChosenProducts} />
-            })}
+              removeCallback={this.removeProductCallback} />
+          ))}
         </div>
-        {!this.state.isHidden &&
+        {this.state.chosenproducts.length > 0 &&
           <Chosenproducts
-            chosenNames={this.state.chosenproducts} />}
+            chosenNames={this.state.chosenproducts}
+            productLength={this.state.products.length} />}
         <div className="shipbuttoncontainer">
           <button className="shipbutton" />
         </div>

@@ -6,7 +6,7 @@ class Header extends React.Component {
     return (
       <div className="header">
         <h1>teenage engineering shipping calculator</h1>
-        <p> Visar {this.props.productLength} produkter</p>
+        <h1> total {this.props.productLength} products</h1>
       </div>
     )
   }
