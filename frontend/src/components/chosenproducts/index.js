@@ -2,50 +2,64 @@ import React from "react"
 import "./style.css"
 
 class Chosenproducts extends React.Component {
-
-  printNames = () => {
-    return (
-      <div>
-        {this.props.chosenNames.map(name => {
-          return <p>{name}</p>
-        })}
-      </div>)
+  constructor(props) {
+    super(props)
+    this.state = {
+      quantity: ""
+    }
   }
+
+// handleInputQty = event => {
+//   this.setState({
+//     quantity: event.target.value
+//   })
+// }
+//
+// handleDeleteOne = event => {
+//   event.preventDefault()
+//   this.setState({
+//     quantity: ""
+//   })
+// }
+
+  printNames = () => ((
+    <div>
+      {this.props.chosenNames.map(name => (
+        <div>
+          <div className="nameandnumber">
+            <p>{name}</p>
+            <div>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                // value={this.state.quantity}
+                // onChange={this.handleInputQty}
+                />
+              <button
+                id="deletechosen"
+                onDelete={this.handleDeleteOne}>x
+              </button>
+            </div>
+          </div>
+        </div>
+        // </div>
+
+      ))}
+    </div>
+  ))
 
   render() {
     return (
       <div className="chosenproducts">
-        <h1 className="chosenproductsheader">CHOOSEN PRODUCTS: {this.props.chosenNames.length}</h1>
+        <h1 className="chosenproductsheader">choosen products: {this.props.chosenNames.length}</h1>
         <div className="printednames">
           <p>{this.printNames()}</p>
-          <input
-            type="text"
-            placeholder="qty" />
-          <select
-            type="text"
-            placeholder="boxes">
-            <option value="" selected disabled hidden>box qty</option>
-            <option
-              value="1">1
-            </option>
-            <option
-              value="2">2
-            </option>
-            <option
-              value="3">3
-            </option>
-            <option
-              value="4">4
-            </option>
-            <option
-              value="5">5
-            </option>
-          </select>
         </div>
+        {/* <button id="deleteallchosen">trash</button> */}
       </div>
     )
   }
-
 }
 
 export default Chosenproducts
