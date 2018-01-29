@@ -43,6 +43,11 @@ const Product = mongoose.model("Product", {
   // Add more attributes to your product here.
 })
 
+const Shipping = mongoose.model("Shipping", {
+  name: String,
+  priceKgEU: String
+})
+
 app.get("/", (req, res) => {
   res.send("Products API")
 })
@@ -61,6 +66,21 @@ app.post("/products", (req, res) => {
 app.get("/products", (req, res) => {
   Product.find().then(allProducts => {
     res.json(allProducts)
+  })
+})
+
+app.post("/shipping", (req, res) => {
+  const shipping = new Shipping(req.body)
+
+  shipping.save()
+    .then(() => { res.status(201).send("Shipping created") })
+    .catch(err => { res.status(400).send(err) })
+})
+
+// Add more endpoints here!
+app.get("/shipping", (req, res) => {
+  Shipping.find().then(allShipping => {
+    res.json(allShipping)
   })
 })
 

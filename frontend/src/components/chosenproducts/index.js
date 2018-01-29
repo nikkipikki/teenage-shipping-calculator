@@ -5,7 +5,6 @@ class Chosenproducts extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      quantity: ""
     }
   }
 
@@ -15,11 +14,9 @@ class Chosenproducts extends React.Component {
 //   })
 // }
 //
-// handleDeleteOne = event => {
-//   event.preventDefault()
-//   this.setState({
-//     quantity: ""
-//   })
+// handleDeleteOne = name => {
+//   console.log(name)
+//   // this.props.removeCallback(name)
 // }
 
   printNames = () => ((
@@ -32,14 +29,12 @@ class Chosenproducts extends React.Component {
               <input
                 type="number"
                 min="0"
-                max="10"
-                // value={this.state.quantity}
-                // onChange={this.handleInputQty}
-                />
-              <button
+                max="10" />
+              {/* <button
                 id="deletechosen"
-                onDelete={this.handleDeleteOne}>x
-              </button>
+                onClick={this.handleDeleteOne(name)}
+                >X
+              </button> */}
             </div>
           </div>
         </div>

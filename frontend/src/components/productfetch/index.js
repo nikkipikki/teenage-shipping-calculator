@@ -56,7 +56,8 @@ class Productfetch extends React.Component {
         {this.state.chosenproducts.length > 0 &&
           <Chosenproducts
             chosenNames={this.state.chosenproducts}
-            productLength={this.state.products.length} />}
+            productLength={this.state.products.length}
+            removeCallback={this.removeProductCallback} />}
         <div className="shipbuttoncontainer">
           <button className="shipbutton" />
         </div>
