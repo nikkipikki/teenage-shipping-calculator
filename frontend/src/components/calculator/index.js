@@ -5,8 +5,8 @@ class Calculator extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      shipping: [],
-      amount: 0
+      // shipping: [],
+      // amount: 0
     }
   }
 
@@ -33,8 +33,6 @@ class Calculator extends React.Component {
           volume: 400,
           qty: this.props.values[productName]
         }))
-        // volume: 400,
-        // qty: this.props.values
       })
     }).then(response => {
       return response.json()

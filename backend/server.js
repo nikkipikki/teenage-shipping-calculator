@@ -86,9 +86,7 @@ app.post("/calculate", (req, res) => {
   //     }
   //   })
   //   res.json(json)
-  // })
-
-
+  // }
   Shipping.find().then(allShipping => {
     const json = req.body.products.map(product => {
       const shippingOptions = allShipping.map(item => ({

@@ -1,6 +1,8 @@
 .chosenproducts {
   /*border: 3px solid black;*/
   /*border-radius: 10px;*/
+  border-top: 3px solid rgb(39, 41, 43);
+  border-bottom: 3px solid rgb(39, 41, 43);
   margin: auto;
   text-align: center;
   width: 100%;
@@ -62,7 +64,7 @@ input {
 }*/
 
 .shipbutton {
-  border: 3px solid black;
+  border: 3px solid rgb(39, 41, 43);
   background-color: rgb(249, 168, 0);
   border-radius: 10px;
   width: 100px;
