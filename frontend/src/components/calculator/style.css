@@ -1,9 +1,10 @@
 .calculatedproducts {
-  border: 3px solid black;
-  border-radius: 10px;
+  /*border: 3px solid black;*/
+  /*border-radius: 10px;*/
   margin: auto;
   text-align: center;
-  width: 72%;
+  padding: 30px;
+  /*width: 72%;*/
   margin-bottom: 50px;
   background: rgb(249, 168, 0);
 }

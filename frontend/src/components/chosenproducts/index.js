@@ -58,7 +58,7 @@ handleInputQty = (event, productName) => {
     return (
       <div>
         <div className="chosenproducts">
-          <h1 className="chosenproductsheader">choosen products: {this.props.chosenProducts.length}</h1>
+          <h1 className="chosenproductsheader">shipping products: {this.props.chosenProducts.length}</h1>
           <div className="printednames">
             <p>{this.printNames()}</p>
           </div>

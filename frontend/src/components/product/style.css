@@ -12,7 +12,7 @@ body {
 .productbox {
   border-radius: 10px;
   background: transparent;
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   width: 30%;
   /*padding: 20px;*/
   /*margin: 20px;*/
@@ -97,5 +97,7 @@ button:focus {
 
 .checkboxpick input[type=checkbox]:checked + .checkboxstyle {
   background-color: rgb(249, 168, 0);
+  border: 3px solid black;
+
   /*color: white;*/
 }
