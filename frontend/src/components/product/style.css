@@ -12,19 +12,14 @@ body {
 .productbox {
   border-radius: 10px;
   background: transparent;
-  /*border: 3px solid black;*/
   width: 30%;
-  /*padding: 20px;*/
-  /*margin: 20px;*/
   margin-bottom: 55px;
 }
 
 .picturebox {
-  /*background: white;*/
   text-align: center;
   height: 200px;
   z-index: -100;
-  /*margin: 20px;*/
 }
 
 .name {
@@ -55,18 +50,16 @@ body {
 }
 
 .information {
-  left: 8%;
+  border-radius: 50%;
   position: relative;
-  padding-left: 30px;
-  margin-top: 15vw;
-  width: 30%;
-  height: 50px;
-  background: transparent;
-  border: none;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjUwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MCA1MCIgd2lkdGg9IjUwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iNTAiIHdpZHRoPSI1MCIvPjxwYXRoIGQ9Ik00Nyw4YzAsMC0yNy42NDgsMC0yOSwwICBjLTEuNDY5LDAtMi40ODQtNC00LTRIM0MxLjg5Niw0LDEsNC44OTYsMSw2djR2MzB2NGMwLDEuMTA0LDAuODk2LDIsMiwyaDQ0YzEuMTA0LDAsMi0wLjg5NiwyLTJWMTBDNDksOC44OTYsNDguMTA0LDgsNDcsOHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0xLDI3VjE2ICBjMC0xLjEwNCwwLjg5Ni0yLDItMmg0NGMxLjEwNCwwLDIsMC44OTYsMiwydjExIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=");
-  background-repeat: no-repeat;
+  width: 15%;
+  height: 4vw;
+  background: rgb(249, 168, 0);
+  border: 2px solid black;
   margin: auto;
   cursor: context-menu;
+  color: black;
+  font-size: 30px;
 }
 
 .informationbox {
@@ -82,13 +75,13 @@ button:focus {
 }
 
 .checkboxstyle {
-  background-color: white;
+  background-color: black;
   display: inline-block;
   width: 100%;
   height: 600px;
   cursor: pointer;
   border-radius: 10px;
-  color: black;
+  color: rgb(249, 168, 0);
 }
 
 .checkboxpick input[type=checkbox]{
@@ -98,6 +91,5 @@ button:focus {
 .checkboxpick input[type=checkbox]:checked + .checkboxstyle {
   background-color: rgb(249, 168, 0);
   border: 3px solid black;
-
-  /*color: white;*/
+  color: black;
 }

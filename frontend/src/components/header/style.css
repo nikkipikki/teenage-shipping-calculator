@@ -1,6 +1,8 @@
 .header {
   text-align: center;
-  color: rgb(249, 168, 0);
+  color: black;
+  margin-top: 100px;
+  /*background: rgb(249, 168, 0);*/
 }
 
 #largeheader {

@@ -17,15 +17,14 @@ toggleHidden = () => {
   })
 }
 
-
 handleInputQty = (event, productName) => {
   const values = {}
   values[productName] = event.target.value
   this.setState({
     quantity: { values }
+  }, () => {
+    console.log(this.state.quantity)
   })
-
-  console.log(this.state.quantity)
 }
 
   printNames = () => ((

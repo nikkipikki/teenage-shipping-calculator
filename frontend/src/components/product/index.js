@@ -56,7 +56,7 @@ class Product extends React.Component {
               </div>
 
               <div className="informationbox">
-                <button className="information" onClick={this.toggleHiddenbox}>
+                <button className="information" onClick={this.toggleHiddenbox}>i
                   {!this.state.isHidden &&
                   <Accordion
                     product={this.props.product} />

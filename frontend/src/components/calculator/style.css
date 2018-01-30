@@ -5,6 +5,7 @@
   text-align: center;
   padding: 30px;
   /*width: 72%;*/
-  margin-bottom: 50px;
-  background: rgb(249, 168, 0);
+  color: rgb(249, 168, 0);
+  /*margin-bottom: 50px;*/
+  background: black;
 }
