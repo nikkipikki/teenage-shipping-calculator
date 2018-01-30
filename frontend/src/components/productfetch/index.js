@@ -23,9 +23,9 @@ class Productfetch extends React.Component {
     })
   }
 
-  addProductCallback = name => {
+  addProductCallback = product => {
     this.setState({
-      chosenproducts: [...this.state.chosenproducts, name]
+      chosenproducts: [...this.state.chosenproducts, product]
     })
   }
 
@@ -55,12 +55,9 @@ class Productfetch extends React.Component {
         </div>
         {this.state.chosenproducts.length > 0 &&
           <Chosenproducts
-            chosenNames={this.state.chosenproducts}
-            productLength={this.state.products.length}
+            chosenProducts={this.state.chosenproducts}
+            // productLength={this.state.products.length}
             removeCallback={this.removeProductCallback} />}
-        <div className="shipbuttoncontainer">
-          <button className="shipbutton" />
-        </div>
       </div>
 
     )
