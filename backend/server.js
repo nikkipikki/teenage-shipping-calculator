@@ -78,4 +78,31 @@ app.get("/shipping", (req, res) => {
   })
 })
 
+app.post("/calculate", (req, res) => {
+  // Shipping.find().then(allShipping => {
+  //   const json = allShipping.map(item => {
+  //     return {
+  //       [item.name]: req.body.volume * req.body.qty * item.priceKg
+  //     }
+  //   })
+  //   res.json(json)
+  // })
+
+
+  Shipping.find().then(allShipping => {
+    const json = req.body.products.map(product => {
+      const shippingOptions = allShipping.map(item => ({
+        [item.name]: product.volume * product.qty * item.priceKg
+      }))
+
+      return {
+        name: product.name,
+        shippingOptions
+      }
+    })
+
+    res.send(json)
+  })
+})
+
 app.listen(8080, () => console.log("Products API listening on port 8080!"))

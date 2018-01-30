@@ -55,10 +55,10 @@ body {
   width: 15%;
   height: 4vw;
   background: rgb(249, 168, 0);
-  border: 2px solid black;
+  border: 2px solid rgb(39, 41, 43);
   margin: auto;
   cursor: context-menu;
-  color: black;
+  color: rgb(39, 41, 43);
   font-size: 30px;
 }
 
@@ -75,13 +75,15 @@ button:focus {
 }
 
 .checkboxstyle {
-  background-color: black;
+  background-color: rgb(39, 41, 43);
   display: inline-block;
   width: 100%;
   height: 600px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 15px;
   color: rgb(249, 168, 0);
+  border: 5px solid rgb(236, 236, 231);
+
 }
 
 .checkboxpick input[type=checkbox]{
@@ -90,6 +92,55 @@ button:focus {
 
 .checkboxpick input[type=checkbox]:checked + .checkboxstyle {
   background-color: rgb(249, 168, 0);
-  border: 3px solid black;
-  color: black;
+  border: 0;
+  color: rgb(39, 41, 43);
+}
+
+@media (max-width: 600px) {
+  .productbox {
+    width: 100%;
+    margin-bottom: 55px;
+  }
+
+  .picture {
+    max-height: 65vw;
+    max-width: 65vw;
+  }
+
+  .information {
+    height: 11vw;
+    width: 13%;
+  }
+}
+
+@media (min-width:601px) and (max-width:700px){
+  .productbox {
+    width: 100%;
+  }
+
+  .picture {
+    max-height: 55vw;
+    max-width: 55vw;
+  }
+
+  .information {
+    height: 8vw;
+    width: 10%;
+  }
+}
+
+@media (min-width:701px) and (max-width:1000px){
+  .productbox {
+    width: 45%;
+  }
+
+  .picture {
+    max-height: 40vw;
+    max-width: 40vw;
+  }
+
+  .information {
+    height: 7vw;
+    width: 15%;
+  }
 }

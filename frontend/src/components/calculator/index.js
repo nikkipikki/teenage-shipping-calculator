@@ -10,29 +10,46 @@ class Calculator extends React.Component {
     }
   }
 
+  // componentDidMount() {
+  //   fetch("http://localhost:8080/shipping").then(response => (
+  //     response.json()
+  //   )).then(json => {
+  //     this.setState({
+  //       shipping: json
+  //     })
+  //   })
+  // }
+
   componentDidMount() {
-    fetch("http://localhost:8080/shipping").then(response => (
-      response.json()
-    )).then(json => {
-      this.setState({
-        shipping: json
+    fetch("http://localhost:8080/calculate", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        products: Object.keys(this.props.values).map(productName => ({
+          name: productName,
+          volume: 400,
+          qty: this.props.values[productName]
+        }))
+        // volume: 400,
+        // qty: this.props.values
       })
+    }).then(response => {
+      return response.json()
+    }).then(json => {
+      this.setState({ shipping: json })
     })
   }
-
-  // calculateShippingCost = () => ((
-  //
-  // ))
 
   render() {
     return (
       <div className="calculatedproducts">
-        THE CALCULATOR
-        {/* <p>{this.calculateShippingCost()}</p> */}
+        <h1>THE CALCULATOR</h1>
       </div>
     )
   }
-
 }
 
 export default Calculator
