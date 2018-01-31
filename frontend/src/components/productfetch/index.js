@@ -23,6 +23,12 @@ class Productfetch extends React.Component {
     })
   }
 
+  handleClearAll = () => {
+    this.setState({
+      chosenproducts: []
+    })
+  }
+
   addProductCallback = product => {
     this.setState({
       chosenproducts: [...this.state.chosenproducts, product]
@@ -55,6 +61,8 @@ class Productfetch extends React.Component {
         </div>
         {this.state.chosenproducts.length > 0 &&
           <Chosenproducts
+            onClear={this.handleClearAll}
+            removeValue={this.removePreviousValue}
             chosenProducts={this.state.chosenproducts}
             // productLength={this.state.products.length}
             removeCallback={this.removeProductCallback} />}

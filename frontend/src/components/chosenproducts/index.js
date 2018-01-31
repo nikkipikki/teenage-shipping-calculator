@@ -17,22 +17,34 @@ toggleHidden = () => {
   })
 }
 
-handleInputQty = (event, productName) => {
+onClickClear = () => {
+  this.props.onClear(this.props.index)
+}
 
+handleInputQty = (event, productName) => {
   const tuple = {
     name: productName,
     quantity: event.target.value
   }
-
-  const values = {}
-  values[productName] = event.target.value
-
-  this.setState({
-    quantity: [...this.state.quantity, tuple]
-  }, () => {
-    console.log("Nicole är bäst")
-    console.log(this.state.quantity)
-  })
+  if (this.state.quantity.find(item => (
+    item.name === productName
+  ))) {
+    this.setState(prevState => {
+      const array = prevState.quantity.map(item => {
+        if (item.name === productName) {
+          item.quantity = tuple.quantity
+        }
+        return item
+      })
+      return {
+        quantity: array
+      }
+    })
+  } else {
+    this.setState(prevState => ({
+      quantity: [...prevState.quantity, tuple]
+    }))
+  }
 }
 
   printNames = () => ((
@@ -69,49 +81,7 @@ handleInputQty = (event, productName) => {
           <div className="printednames">
             <p>{this.printNames()}</p>
           </div>
-          {/* <button id="deleteallchosen">trash</button> */}
-          <div className="fromto">
-            <select
-              type="text"
-              // value={this.state.category}
-              // onChange={this.handleCategory}
-              placeholder="category">
-              <option value="" selected disabled hidden>from</option>
-              <option
-                value="china">CHINA
-              </option>
-              <option
-                value="sweden">SWEDEN
-              </option>
-              <option
-                value="unitedstates">UNITED STATES
-              </option>
-              <option
-                value="worlwide">WORLD WIDE
-              </option>
-            </select>
-            {/* <div
-              className="fromtoicon" /> */}
-            <select
-              type="text"
-              // value={this.state.category}
-              // onChange={this.handleCategory}
-              placeholder="category">
-              <option value="" selected disabled hidden>to</option>
-              <option
-                value="china">CHINA
-              </option>
-              <option
-                value="sweden">SWEDEN
-              </option>
-              <option
-                value="unitedstates">UNITED STATES
-              </option>
-              <option
-                value="worlwide">WORLD WIDE
-              </option>
-            </select>
-          </div>
+          <button onClick={this.onClickClear}>delete</button>
         </div>
         <div className="shipbuttoncontainer">
           <button className="shipbutton" onClick={this.toggleHidden} />

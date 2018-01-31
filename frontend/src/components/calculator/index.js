@@ -15,15 +15,16 @@ class Calculator extends React.Component {
     })
   }
 
-  // componentDidMount() {
-  //   fetch("http://localhost:8080/shipping").then(response => (
-  //     response.json()
-  //   )).then(json => {
-  //     this.setState({
-  //       shipping: json
-  //     })
-  //   })
-  // }
+  printShip = () => ((
+    <div>
+      {this.props.values.map(p => (
+        <div>
+          <p>{p.name}</p>
+          <p>{p.quantity}</p>
+        </div>
+      ))}
+    </div>
+  ))
 
   getVolume = name => {
     const volume = this.props.chosenProducts.map(product => {
@@ -45,7 +46,7 @@ class Calculator extends React.Component {
       body: JSON.stringify({
         products: Object.keys(this.props.values).map(value => ({
           name: value.name,
-          volume: 400, // this.getVolume(value.name)
+          volume: this.getVolume(value.name),
           qty: value
         }))
       })
@@ -62,6 +63,9 @@ class Calculator extends React.Component {
     return (
       <div className="calculatedproducts">
         <h1>THE CALCULATOR</h1>
+        <div className="printednames">
+          <p>{this.printShip()}</p>
+        </div>
       </div>
     )
   }
