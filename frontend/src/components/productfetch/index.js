@@ -56,7 +56,8 @@ class Productfetch extends React.Component {
             <Product
               product={product}
               chosenCallback={this.addProductCallback}
-              removeCallback={this.removeProductCallback} />
+              removeCallback={this.removeProductCallback}
+              chosenProducts={this.state.chosenproducts} />
           ))}
         </div>
         {this.state.chosenproducts.length > 0 &&

@@ -59,15 +59,9 @@ handleInputQty = (event, productName) => {
                 type="number"
                 min="1"
                 max="10" />
-              {/* <button
-                id="deletechosen"
-                onClick={this.handleDeleteOne(name)}
-                >X
-              </button> */}
             </div>
           </div>
         </div>
-        // </div>
 
       ))}
     </div>
@@ -81,7 +75,9 @@ handleInputQty = (event, productName) => {
           <div className="printednames">
             <p>{this.printNames()}</p>
           </div>
-          <button onClick={this.onClickClear}>delete</button>
+          <div className="deletebuttoncontainer">
+            <button className="deletebutton" onClick={this.onClickClear} />
+          </div>
         </div>
         <div className="shipbuttoncontainer">
           <button className="shipbutton" onClick={this.toggleHidden} />

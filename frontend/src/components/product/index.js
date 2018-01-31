@@ -29,6 +29,15 @@ class Product extends React.Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.chosenProducts !== nextProps.chosenProducts
+      && nextProps.chosenProducts.length === 0) {
+      this.setState({
+        isChecked: false
+      })
+    }
+  }
+
   render() {
     return (
       <div className="productbox">
@@ -63,7 +72,6 @@ class Product extends React.Component {
                   }
                 </button>
               </div>
-
             </label>
           </div>
         </div>
