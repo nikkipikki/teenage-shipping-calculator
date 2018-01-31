@@ -7,7 +7,7 @@ class Chosenproducts extends React.Component {
     super(props)
     this.state = {
       isHidden: true,
-      quantity: {}
+      quantity: []
     }
   }
 
@@ -18,11 +18,19 @@ toggleHidden = () => {
 }
 
 handleInputQty = (event, productName) => {
+
+  const tuple = {
+    name: productName,
+    quantity: event.target.value
+  }
+
   const values = {}
   values[productName] = event.target.value
+
   this.setState({
-    quantity: { values }
+    quantity: [...this.state.quantity, tuple]
   }, () => {
+    console.log("Nicole är bäst")
     console.log(this.state.quantity)
   })
 }
@@ -110,7 +118,8 @@ handleInputQty = (event, productName) => {
         </div>
         {!this.state.isHidden && <Calculator
           chosenProducts={this.props.chosenProducts}
-          values={this.state.quantity.values} />}
+          values={this.state.quantity}
+          volume={this.state.volume} />}
       </div>
     )
   }

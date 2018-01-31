@@ -8,6 +8,11 @@ class Calculator extends React.Component {
       // shipping: [],
       // amount: 0
     }
+
+    this.props.values.map(p => {
+      console.log(p.name)
+      console.log(p.quantity)
+    })
   }
 
   // componentDidMount() {
@@ -20,6 +25,16 @@ class Calculator extends React.Component {
   //   })
   // }
 
+  getVolume = name => {
+    const volume = this.props.chosenProducts.map(product => {
+      console.log(product)
+      if (product.name === name) {
+        return product.volume
+      }
+    })
+    return volume
+  }
+
   componentDidMount() {
     fetch("http://localhost:8080/calculate", {
       method: "POST",
@@ -28,14 +43,16 @@ class Calculator extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        products: Object.keys(this.props.values).map(productName => ({
-          name: productName,
-          volume: 400,
-          qty: this.props.values[productName]
+        products: Object.keys(this.props.values).map(value => ({
+          name: value.name,
+          volume: 400, // this.getVolume(value.name)
+          qty: value
         }))
       })
     }).then(response => {
-      return response.json()
+      var rsp = response.json()
+      console.log(rsp)
+      return rsp
     }).then(json => {
       this.setState({ shipping: json })
     })

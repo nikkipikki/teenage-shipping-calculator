@@ -90,7 +90,7 @@ app.post("/calculate", (req, res) => {
   Shipping.find().then(allShipping => {
     const json = req.body.products.map(product => {
       const shippingOptions = allShipping.map(item => ({
-        [item.name]: product.volume * product.qty * item.priceKg
+        [item.name]: product//product.volume * product.qty * item.priceKg
       }))
 
       return {
