@@ -84,8 +84,7 @@ handleInputQty = (event, productName) => {
         </div>
         {!this.state.isHidden && <Calculator
           chosenProducts={this.props.chosenProducts}
-          values={this.state.quantity}
-          volume={this.state.volume} />}
+          values={this.state.quantity} />}
       </div>
     )
   }

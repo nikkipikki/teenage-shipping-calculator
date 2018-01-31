@@ -42,7 +42,7 @@ class Productfetch extends React.Component {
   }
 
   removeFromChosenProducts = (prevState, product) => {
-    prevState.chosenproducts.splice(prevState.chosenproducts.indexOf(product.name), 1)
+    prevState.chosenproducts.splice(prevState.chosenproducts.indexOf(product), 1)
     return prevState.chosenproducts
   }
 
@@ -63,10 +63,7 @@ class Productfetch extends React.Component {
         {this.state.chosenproducts.length > 0 &&
           <Chosenproducts
             onClear={this.handleClearAll}
-            removeValue={this.removePreviousValue}
-            chosenProducts={this.state.chosenproducts}
-            // productLength={this.state.products.length}
-            removeCallback={this.removeProductCallback} />}
+            chosenProducts={this.state.chosenproducts} />}
       </div>
 
     )
