@@ -11,6 +11,7 @@
 }
 
 .basketcontainer {
+  outline: 0;
   text-align: right;
   margin-top: 20px;
   margin-right: 20px;
@@ -20,10 +21,16 @@
 }
 
 .basket {
+  background-color: #f9a800;
   text-align: center;
   margin: 0;
   padding: 20px;
   border-radius: 10px;
   width: 200px;
-  border: 2px solid black;
+  border: 2px solid #27292b;
+}
+
+a {
+  text-decoration: none;
+  color: #27292b;
 }
