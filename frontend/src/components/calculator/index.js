@@ -113,9 +113,9 @@ class Calculator extends React.Component {
           {/* <p>upsEU: {this.state.UpsEU} $</p>
           <p>upsWW: {this.state.UpsWW} $</p> */}
           <p>fedexUS: {this.state.FedexUS} $</p>
-          </div>
-          <p>{this.bestShipping()}</p>
-          {/* <p>fedexEU: {this.state.FedexEU} $</p>
+        </div>
+        <p>{this.bestShipping()}</p>
+        {/* <p>fedexEU: {this.state.FedexEU} $</p>
           <p>fedexWW: {this.state.FedexWW} $</p> */}
       </div>
     )
