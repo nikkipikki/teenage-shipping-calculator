@@ -50,6 +50,7 @@ class Productfetch extends React.Component {
     return (
       <div>
         <Header
+          chosenProducts={this.state.chosenproducts}
           productLength={this.state.products.length} />
         <div className="container">
           {this.state.products.map(product => (

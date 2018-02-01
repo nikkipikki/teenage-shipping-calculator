@@ -4,9 +4,14 @@ import "./style.css"
 class Header extends React.Component {
   render() {
     return (
-      <div className="header">
-        <h1 id="largeheader">shipping calculator</h1>
-        <h1> total {this.props.productLength} products</h1>
+      <div>
+        <div className="basket">
+          <p> added {this.props.chosenProducts.length} products</p>
+        </div>
+        <div className="header">
+          <h1 id="largeheader">shipping calculator</h1>
+          <h1> total {this.props.productLength} products</h1>
+        </div>
       </div>
     )
   }
