@@ -5,8 +5,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <div className="basket">
-          <p> added {this.props.chosenProducts.length} products</p>
+        <div className="basketcontainer">
+          <p className="basket"> added {this.props.chosenProducts.length} products</p>
         </div>
         <div className="header">
           <h1 id="largeheader">shipping calculator</h1>
