@@ -70,6 +70,7 @@ handleInputQty = (event, productName) => {
   render() {
     return (
       <div>
+        {/* {this.state.isHidden && */}
         <div className="chosenproducts">
           <h1 className="chosenproductsheader">shipping products: {this.props.chosenProducts.length}</h1>
           <div className="printednames">
@@ -79,12 +80,14 @@ handleInputQty = (event, productName) => {
             <button className="deletebutton" onClick={this.onClickClear} />
           </div>
         </div>
+        {/* } */}
         {!this.state.isHidden && <Calculator
           chosenProducts={this.props.chosenProducts}
           values={this.state.quantity} />}
+        {this.state.isHidden &&
         <div className="shipbuttoncontainer">
-          <button className="shipbutton" onClick={this.toggleHidden} />
-        </div>
+          <button className="shipbutton grow" onClick={this.toggleHidden} />
+        </div> }
       </div>
     )
   }

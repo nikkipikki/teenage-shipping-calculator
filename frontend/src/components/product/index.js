@@ -43,7 +43,7 @@ class Product extends React.Component {
       <div className="productbox">
         <div className="name">
 
-          <div className="checkboxpick">
+          <div className="checkboxpick grow2">
             <input
               type="checkbox"
               id={this.props.product._id}

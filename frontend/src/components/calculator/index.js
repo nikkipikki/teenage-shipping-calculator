@@ -10,8 +10,7 @@ class Calculator extends React.Component {
       UpsWW: 0,
       FedexUS: 0,
       FedexEU: 0,
-      FedexWW: 0,
-      valuequantity: ""
+      FedexWW: 0
     }
   }
 
@@ -97,26 +96,28 @@ class Calculator extends React.Component {
 
   bestShipping = () => {
     if (this.state.UpsUS < this.state.FedexUS) {
-      return <h1>{this.state.UpsUs}</h1>
+      return <div className="bestalternativecontainer"><h1>best</h1><div className="bestalternative"></div><h1>:</h1><h1>upsUS: {this.state.UpsUs} $</h1></div>
     } else {
-      return <h1>{this.state.FedexUS}</h1>
+      return <div className="bestalternativecontainer"><h1>best</h1><div className="bestalternative"></div><h1>:</h1><h1>fedexUS: {this.state.FedexUS} $</h1></div>
     }
   }
 
   render() {
     return (
       <div className="calculatedproducts">
-        <h1>THE CALCULATOR</h1>
-        <div className="printednames">
-          <p>{this.printShip()}</p>
-          <p>best shipping alternative: {this.bestShipping()}</p>
+        <h1>CALCULATOR</h1>
+        <div className="printedship">
+          {/* <p>{this.printShip()}</p> */}
           <p>upsUS: {this.state.UpsUS} $</p>
+          <p>I</p>
           {/* <p>upsEU: {this.state.UpsEU} $</p>
           <p>upsWW: {this.state.UpsWW} $</p> */}
           <p>fedexUS: {this.state.FedexUS} $</p>
+          </div>
+          <p>{this.bestShipping()}</p>
+            <button>goback</button>
           {/* <p>fedexEU: {this.state.FedexEU} $</p>
           <p>fedexWW: {this.state.FedexWW} $</p> */}
-        </div>
       </div>
     )
   }
