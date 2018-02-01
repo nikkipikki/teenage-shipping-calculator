@@ -10,7 +10,8 @@ class Calculator extends React.Component {
       UpsWW: 0,
       FedexUS: 0,
       FedexEU: 0,
-      FedexWW: 0
+      FedexWW: 0,
+      valuequantity: ""
     }
   }
 
@@ -50,13 +51,13 @@ class Calculator extends React.Component {
         }))
       })
     }).then(response => {
-      // var rsp = response.json()
-      // console.log(rsp)
       return response.json()
     }).then(json => {
       console.log("Server Response...")
       console.log(json)
       this.calculateTotalShippingCost(json)
+      // console.log(this.bestShipping)
+      // this.bestShipping()
     })
   }
 
@@ -88,17 +89,18 @@ class Calculator extends React.Component {
             FedexWW: this.state.FedexWW + option.FedexWW
           })
         } else {
-          console.log("PANIK!?!?!")
           console.log(option.upsUS)
         }
       })
     })
-    console.log(this.state.UpsUS)
-    console.log(this.state.UpsEU)
-    console.log(this.state.UpsWW)
-    console.log(this.state.FedexUS)
-    console.log(this.state.FedexEU)
-    console.log(this.state.FedexWW)
+  }
+
+  bestShipping = () => {
+    if (this.state.UpsUS < this.state.FedexUS) {
+      return <h1>{this.state.UpsUs}</h1>
+    } else {
+      return <h1>{this.state.FedexUS}</h1>
+    }
   }
 
   render() {
@@ -107,7 +109,13 @@ class Calculator extends React.Component {
         <h1>THE CALCULATOR</h1>
         <div className="printednames">
           <p>{this.printShip()}</p>
-          <p>{this.state.UpsUS}</p>
+          <p>best shipping alternative: {this.bestShipping()}</p>
+          <p>upsUS: {this.state.UpsUS} $</p>
+          {/* <p>upsEU: {this.state.UpsEU} $</p>
+          <p>upsWW: {this.state.UpsWW} $</p> */}
+          <p>fedexUS: {this.state.FedexUS} $</p>
+          {/* <p>fedexEU: {this.state.FedexEU} $</p>
+          <p>fedexWW: {this.state.FedexWW} $</p> */}
         </div>
       </div>
     )

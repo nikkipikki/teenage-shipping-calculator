@@ -58,7 +58,7 @@ handleInputQty = (event, productName) => {
                 onChange={event => this.handleInputQty(event, product.name)}
                 type="number"
                 min="1"
-                max="10" />
+                max="20" />
             </div>
           </div>
         </div>
@@ -79,12 +79,12 @@ handleInputQty = (event, productName) => {
             <button className="deletebutton" onClick={this.onClickClear} />
           </div>
         </div>
-        <div className="shipbuttoncontainer">
-          <button className="shipbutton" onClick={this.toggleHidden} />
-        </div>
         {!this.state.isHidden && <Calculator
           chosenProducts={this.props.chosenProducts}
           values={this.state.quantity} />}
+        <div className="shipbuttoncontainer">
+          <button className="shipbutton" onClick={this.toggleHidden} />
+        </div>
       </div>
     )
   }
